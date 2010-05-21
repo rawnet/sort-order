@@ -1,4 +1,5 @@
 module SortOrder
+  VERSION = '0.1.0'
   
   def self.new *cols
     Columns.new *cols
