@@ -12,7 +12,9 @@ When /^I output (.+) as (.+)$/ do |item, format|
   when ['the columns', 'sql']
     @sort_order.to_sql
   when ['the columns', 'sql (current only)']
-    @sort_order.to_sql(:current => true)    
+    @sort_order.to_sql(:current => true)   
+  when ['the columns', 'sql (current only without table)']
+    @sort_order.to_sql(:current => true, :table => false)
   when ['the columns', 'parameters']
     @sort_order.to_params
   when ['the columns', 'parameters (current only)']

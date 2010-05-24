@@ -20,7 +20,7 @@ module SortOrder
     end
   
     def to_sql(options = {})
-      "#{field} #{direction.to_sql(options[:flip])}"
+      "#{options[:table] == false ? field.name : field } #{direction.to_sql(options[:flip])}"
     end
 
     def to_param(options = {})

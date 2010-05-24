@@ -18,8 +18,8 @@ module SortOrder
       @current ||= first
     end
 
-    def current=(token)
-      @current = merge(token)
+    def current=(token=nil)
+      @current = merge(token) if token.present?
     end
   
     def current?(other)
@@ -44,9 +44,6 @@ module SortOrder
       if old_col = find(new_col.name)
         old_col.direction = new_col.direction
         return old_col
-      else
-        self << new_col
-        return new_col
       end
     end
 

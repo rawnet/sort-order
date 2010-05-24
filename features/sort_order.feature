@@ -10,6 +10,9 @@ Scenario: Sort Order
   When I output the columns as sql (current only)
   Then I should get the following string: users.first_name ASC
 
+  When I output the columns as sql (current only without table)
+  Then I should get the following string: first_name ASC
+
   When I output each as a parameter
   Then I should get the following list: first_name 1, last_name 1, email 0
 
